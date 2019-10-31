@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dominos</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script type="text/javascript">
+        var clickTag = "https://dominos.by";
+    </script>
+    <style>
+        body,html{position:relative;overflow:hidden;margin:0;padding:0}.container{position:relative;overflow:hidden;width:240px;height:400px;background:url(images/background.jpg);opacity:0;pointer-events:none}.container.loaded{opacity:1;pointer-events:auto}.container.loaded .open{-webkit-animation-name:bounceInLeft;animation-name:bounceInLeft;-webkit-animation-duration:1.5s;animation-duration:1.5s;-webkit-animation-fill-mode:both;animation-fill-mode:both}.container.loaded .pusling-block{-webkit-animation-name:bounceInUp;animation-name:bounceInUp;-webkit-animation-duration:1.5s;animation-duration:1.5s;-webkit-animation-fill-mode:both;animation-fill-mode:both;-webkit-animation-delay:.8s;animation-delay:.8s}.container.loaded .cursor.pulse{opacity:1}.container.loaded .pulse{-webkit-animation:pulse 1.5s infinite;animation:pulse 1.5s infinite;-webkit-animation-delay:1s;animation-delay:1s}.container.loaded .pulse-circle{-webkit-animation:pulse-circle 1.5s infinite;animation:pulse-circle 1.5s infinite;-webkit-animation-delay:1s;animation-delay:1s}.container.clicked .link{display:block}.container.clicked .pusling-block .text1{display:none}.container.clicked .pusling-block .text3{display:block;left:-65px;top:-25px}.container.clicked .pusling-block{-webkit-transform:translate(80px, 30px);-ms-transform:translate(80px, 30px);transform:translate(80px, 30px)}.container.clicked .open{display:none}.container.clicked .clock,.container.clicked .text2{display:block}.container.clicked .text2{-webkit-animation-name:bounceInLeft;animation-name:bounceInLeft;-webkit-animation-duration:1.5s;animation-duration:1.5s;-webkit-animation-fill-mode:both;animation-fill-mode:both;-webkit-animation-delay:.3s;animation-delay:.3s}.container.clicked .clock{-webkit-animation-name:bounceInRight;animation-name:bounceInRight;-webkit-animation-duration:1.5s;animation-duration:1.5s;-webkit-animation-fill-mode:both;animation-fill-mode:both;-webkit-animation-delay:1.2s;animation-delay:1.2s}.container.clicked .fire{-webkit-animation-name:zoomIn;animation-name:zoomIn;-webkit-animation-duration:.8s;animation-duration:.8s;-webkit-animation-fill-mode:both;animation-fill-mode:both;-webkit-animation-delay:2.6s;animation-delay:2.6s}.container.clicked .pulse-button{width:140px;height:140px;left:60px}.container.clicked .pusling-block{left:140px;bottom:-20px;-webkit-animation-name:bounceInUp2;animation-name:bounceInUp2;-webkit-animation-duration:1.5s;animation-duration:1.5s;-webkit-animation-fill-mode:both;animation-fill-mode:both;-webkit-animation-delay:3s!important;animation-delay:3s!important}.container.clicked .smoke{-webkit-animation-name:smokeShow;animation-name:smokeShow;-webkit-animation-duration:2s;animation-duration:2s;-webkit-animation-fill-mode:both;animation-fill-mode:both}.container.clicked .cursor.pulse{display:none}.logo{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;margin-top:10px;pointer-events:none;z-index:10;position:relative}.logo img{width:170px;height:38px}.link{position:absolute;left:0;top:0;width:100%;height:100%;z-index:999999;display:none}.open{margin-top:10px;pointer-events:none}canvas{position:relative;z-index:2;position:absolute;left:0;top:-42px}.pusling-block{pointer-events:none;position:absolute;z-index:3;left:60px;bottom:10px}.text1{position:relative;z-index:2}.text3{position:relative;z-index:2;display:none}.text2{position:absolute;left:-5px;top:65px;z-index:10;pointer-events:none;-webkit-transform:translate3d(-3000px, 0, 0);transform:translate3d(-3000px, 0, 0)}.clock{position:absolute;right:5px;top:105px;z-index:10;pointer-events:none;display:none}.fire{position:absolute;left:0px;bottom:70px;z-index:10;pointer-events:none;opacity:0}.pulse-button{position:absolute;top:50%;left:50%;margin-left:-50px;margin-top:-50px;display:block;width:100px;height:100px;font-size:1.3em;font-weight:light;text-align:center;line-height:100px;letter-spacing:-1px;color:white;border:none;border-radius:50%;background:#e31837;cursor:pointer;-webkit-box-shadow:0 0 0 0 rgba(227, 24, 55, 0.6);box-shadow:0 0 0 0 rgba(227, 24, 55, 0.6);-webkit-animation:pulse-btn 1.5s infinite}.pulse-button:hover{-webkit-animation:none}@-webkit-keyframes pulse-btn{0%{-moz-transform:scale(0.9);-ms-transform:scale(0.9);-webkit-transform:scale(0.9);transform:scale(0.9)}70%{-moz-transform:scale(1);-ms-transform:scale(1);-webkit-transform:scale(1);transform:scale(1);-webkit-box-shadow:0 0 0 50px rgba(90, 153, 212, 0);box-shadow:0 0 0 50px rgba(90, 153, 212, 0)}to{-moz-transform:scale(0.9);-ms-transform:scale(0.9);-webkit-transform:scale(0.9);transform:scale(0.9);-webkit-box-shadow:0 0 0 0 rgba(90, 153, 212, 0);box-shadow:0 0 0 0 rgba(90, 153, 212, 0)}}@-webkit-keyframes bounceInLeft{0%,60%,75%,90%,to{-webkit-transition-timing-function:cubic-bezier(0.215, 0.61, 0.355, 1);transition-timing-function:cubic-bezier(0.215, 0.61, 0.355, 1)}0%{opacity:0;-webkit-transform:translate3d(-3000px, 0, 0);transform:translate3d(-3000px, 0, 0)}60%{opacity:1;-webkit-transform:translate3d(25px, 0, 0);transform:translate3d(25px, 0, 0)}75%{-webkit-transform:translate3d(-10px, 0, 0);transform:translate3d(-10px, 0, 0)}90%{-webkit-transform:translate3d(5px, 0, 0);transform:translate3d(5px, 0, 0)}to{-webkit-transform:none;transform:none}}@keyframes bounceInLeft{0%,60%,75%,90%,to{-webkit-transition-timing-function:cubic-bezier(0.215, 0.61, 0.355, 1);-o-transition-timing-function:cubic-bezier(0.215, 0.61, 0.355, 1);transition-timing-function:cubic-bezier(0.215, 0.61, 0.355, 1)}0%{opacity:0;-webkit-transform:translate3d(-3000px, 0, 0);transform:translate3d(-3000px, 0, 0)}60%{opacity:1;-webkit-transform:translate3d(25px, 0, 0);transform:translate3d(25px, 0, 0)}75%{-webkit-transform:translate3d(-10px, 0, 0);transform:translate3d(-10px, 0, 0)}90%{-webkit-transform:translate3d(5px, 0, 0);transform:translate3d(5px, 0, 0)}to{-webkit-transform:none;transform:none}}@-webkit-keyframes smokeShow{0%{opacity:0}to{opacity:.3;-webkit-filter:brightness(1.1);filter:brightness(1.1)}}@keyframes smokeShow{0%{opacity:0}to{opacity:.3;-webkit-filter:brightness(1.1);filter:brightness(1.1)}}@-webkit-keyframes bounceInRight{0%,60%,75%,90%,to{-webkit-transition-timing-function:cubic-bezier(0.215, 0.61, 0.355, 1);transition-timing-function:cubic-bezier(0.215, 0.61, 0.355, 1)}0%{opacity:0;-webkit-transform:translate3d(3000px, 0, 0);transform:translate3d(3000px, 0, 0)}60%{opacity:1;-webkit-transform:translate3d(-25px, 0, 0);transform:translate3d(-25px, 0, 0)}75%{-webkit-transform:translate3d(10px, 0, 0);transform:translate3d(10px, 0, 0)}90%{-webkit-transform:translate3d(-5px, 0, 0);transform:translate3d(-5px, 0, 0)}to{-webkit-transform:none;transform:none}}@keyframes bounceInRight{0%,60%,75%,90%,to{-webkit-transition-timing-function:cubic-bezier(0.215, 0.61, 0.355, 1);-o-transition-timing-function:cubic-bezier(0.215, 0.61, 0.355, 1);transition-timing-function:cubic-bezier(0.215, 0.61, 0.355, 1)}0%{opacity:0;-webkit-transform:translate3d(3000px, 0, 0);transform:translate3d(3000px, 0, 0)}60%{opacity:1;-webkit-transform:translate3d(-25px, 0, 0);transform:translate3d(-25px, 0, 0)}75%{-webkit-transform:translate3d(10px, 0, 0);transform:translate3d(10px, 0, 0)}90%{-webkit-transform:translate3d(-5px, 0, 0);transform:translate3d(-5px, 0, 0)}to{-webkit-transform:none;transform:none}}.zoomIn{-webkit-animation-name:zoomIn;animation-name:zoomIn;-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;animation-fill-mode:both}@-webkit-keyframes zoomIn{0%{opacity:0;-webkit-transform:scale3d(0.3, 0.3, 0.3);transform:scale3d(0.3, 0.3, 0.3)}50%,to{opacity:1}}@keyframes zoomIn{0%{opacity:0;-webkit-transform:scale3d(0.3, 0.3, 0.3);transform:scale3d(0.3, 0.3, 0.3)}50%,to{opacity:1}}.bounceInUp{-webkit-animation-name:bounceInUp;animation-name:bounceInUp;-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;animation-fill-mode:both}@-webkit-keyframes bounceInUp{0%,60%,75%,90%,to{-webkit-transition-timing-function:cubic-bezier(0.215, 0.61, 0.355, 1);transition-timing-function:cubic-bezier(0.215, 0.61, 0.355, 1)}0%{opacity:0;-webkit-transform:translate3d(0, 3000px, 0);transform:translate3d(0, 3000px, 0)}60%{opacity:1;-webkit-transform:translate3d(0, -20px, 0);transform:translate3d(0, -20px, 0)}75%{-webkit-transform:translate3d(0, 10px, 0);transform:translate3d(0, 10px, 0)}90%{-webkit-transform:translate3d(0, -5px, 0);transform:translate3d(0, -5px, 0)}to{-webkit-transform:translate3d(0, 0, 0);transform:translate3d(0, 0, 0)}}@keyframes bounceInUp{0%,60%,75%,90%,to{-webkit-transition-timing-function:cubic-bezier(0.215, 0.61, 0.355, 1);-o-transition-timing-function:cubic-bezier(0.215, 0.61, 0.355, 1);transition-timing-function:cubic-bezier(0.215, 0.61, 0.355, 1)}0%{opacity:0;-webkit-transform:translate3d(0, 3000px, 0);transform:translate3d(0, 3000px, 0)}60%{opacity:1;-webkit-transform:translate3d(0, -20px, 0);transform:translate3d(0, -20px, 0)}75%{-webkit-transform:translate3d(0, 10px, 0);transform:translate3d(0, 10px, 0)}90%{-webkit-transform:translate3d(0, -5px, 0);transform:translate3d(0, -5px, 0)}to{-webkit-transform:translate3d(0, 0, 0);transform:translate3d(0, 0, 0)}}@-webkit-keyframes bounceInUp2{0%,60%,75%,90%,to{-webkit-transition-timing-function:cubic-bezier(0.215, 0.61, 0.355, 1);transition-timing-function:cubic-bezier(0.215, 0.61, 0.355, 1)}0%{opacity:0;-webkit-transform:translate3d(0, 3000px, 0);transform:translate3d(0, 3000px, 0)}60%{opacity:1;-webkit-transform:translate3d(0, -20px, 0);transform:translate3d(0, -20px, 0)}75%{-webkit-transform:translate3d(0, 10px, 0);transform:translate3d(0, 10px, 0)}90%{-webkit-transform:translate3d(0, -5px, 0);transform:translate3d(0, -5px, 0)}to{-webkit-transform:translate3d(0, 0, 0);transform:translate3d(0, 0, 0)}}@keyframes bounceInUp2{0%,60%,75%,90%,to{-webkit-transition-timing-function:cubic-bezier(0.215, 0.61, 0.355, 1);-o-transition-timing-function:cubic-bezier(0.215, 0.61, 0.355, 1);transition-timing-function:cubic-bezier(0.215, 0.61, 0.355, 1)}0%{opacity:0;-webkit-transform:translate3d(0, 3000px, 0);transform:translate3d(0, 3000px, 0)}60%{opacity:1;-webkit-transform:translate3d(0, -20px, 0);transform:translate3d(0, -20px, 0)}75%{-webkit-transform:translate3d(0, 10px, 0);transform:translate3d(0, 10px, 0)}90%{-webkit-transform:translate3d(0, -5px, 0);transform:translate3d(0, -5px, 0)}to{-webkit-transform:translate3d(0, 0, 0);transform:translate3d(0, 0, 0)}}.cursor{position:absolute;bottom:190px;left:120px;background:url(images/cursor.png);width:24px;height:24px;pointer-events:none;z-index:123;opacity:0!important}.cursor-circle{width:10px;height:10px;border:1px solid #fff;border-radius:50%;position:absolute;left:0px;top:-2px}@-webkit-keyframes pulse{0%{opacity:1;-webkit-transform:translate(10px, 10px) scale(0);transform:translate(10px, 10px) scale(0)}30%,70%{opacity:1;-webkit-transform:translate(0, 0) scale(1);transform:translate(0, 0) scale(1)}to{opacity:0;-webkit-transform:translate(-20px, 10px) scale(0.5);transform:translate(-20px, 10px) scale(0.5)}}@keyframes pulse{0%{opacity:1;-webkit-transform:translate(10px, 10px) scale(0);transform:translate(10px, 10px) scale(0)}30%,70%{opacity:1;-webkit-transform:translate(0, 0) scale(1);transform:translate(0, 0) scale(1)}to{opacity:0;-webkit-transform:translate(-20px, 10px) scale(0.5);transform:translate(-20px, 10px) scale(0.5)}}@-webkit-keyframes pulse-circle{0%,30%{opacity:0;-webkit-transform:scale(0);transform:scale(0)}35%,60%{opacity:1;-webkit-transform:scale(1);transform:scale(1)}to{opacity:0;-webkit-transform:scale(0.5);transform:scale(0.5)}}@keyframes pulse-circle{0%,30%{opacity:0;-webkit-transform:scale(0);transform:scale(0)}35%,60%{opacity:1;-webkit-transform:scale(1);transform:scale(1)}to{opacity:0;-webkit-transform:scale(0.5);transform:scale(0.5)}}.sprite{display:none!important}.smoke{position:absolute;left:-471px;z-index:5;top:-410px;opacity:0;pointer-events:none;-webkit-transform:rotate(-134deg);-ms-transform:rotate(-134deg);transform:rotate(-134deg)}
+    </style>
+</head>
+
+<body>
+    <div class="container" id="creative">
+
+        <a href="javascript:window.open(window.clickTag)" class="link"></a>
+        <div class="logo">
+            <img src="images/logo_dominos.svg" alt="logo">
+        </div>
+        <div class="open">
+            <img src="images/open.png" alt="open">
+        </div>
+
+        <div class="text2">
+            <img src="images/novinka.png" alt="novinka">
+        </div>
+
+        <div class="clock">
+            <img src="images/30.png" alt="timer">
+        </div>
+
+        <div class="fire">
+            <img src="images/Fire.png" alt="timer">
+        </div>
+
+        <div class="cursor pulse">
+            <span class="cursor-circle pulse-circle"></span>
+        </div>
+
+        <div class="pusling-block moved">
+            <div class="text1">
+                <img src="images/text_new_testy.png" alt="new-tasty">
+            </div>
+            <div class="text3">
+                <img src="images/text_karri.png" alt="novinka">
+            </div>
+
+            <div class="pulse-container">
+                <span class='pulse-button'></span>
+            </div>
+        </div>
+
+        <canvas id="smoke" class="smoke"></canvas>
+
+        <div class="sprite">
+            <img src="images/sprite.png" alt="sprite">
+        </div>
+        <canvas width="240" height="400" id="canvas" onclick=""></canvas>
+
+
+    </div>
+
+    <script>
+        var canvas = document.getElementById('canvas');
+var creative = document.getElementById('creative');
+
+var ctx = canvas.getContext('2d');
+
+var x = 0;
+var tickCount = 0;
+var isStart = false;
+
+var sprite = new Image();
+
+sprite.src = 'images/sprite.png';
+sprite.onload = function () {
+    ctx.drawImage(sprite, x, 0, 234, 354, 0, 0, 234, 354);
+    tick();
+    requestAnimationFrame(tick);
+}
+
+window.addEventListener('load', function () {
+    creative.classList.add('loaded');
+    
+    window.addEventListener('click', function () {
+        isStart = true;
+        creative.classList.add('clicked');
+    });
+});
+
+
+
+function tick() {
+    if (isStart) {
+        if (tickCount > 5) {
+            draw();
+            tickCount = 0;
+        }
+
+        tickCount += 1;
+    }
+    requestAnimationFrame(tick);
+}
+
+
+function draw() {
+    ctx.clearRect(0, 0, canvas.clientWidth, canvas.height);
+
+    if (x < 702) {
+        x = x + 234;
+    } else {
+        x = 702;
+    }
+
+    ctx.drawImage(sprite, x, 0, 234, 355, 0, 0, 234, 355);
+}
+    </script>
+    <script>
+        
+setTimeout(function(){
+(function () {
+    var requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+    window.requestAnimationFrame = requestAnimationFrame;
+  })();
+  
+  var canvas = document.getElementById("smoke"),
+      ctx = canvas.getContext("2d"),
+      settings = {
+        color: {
+          r: 255,
+          g: 255,
+          b: 255
+        }
+      },
+      loading = true;
+  
+  
+  var parts = [],
+      minSpawnTime = 25,
+      lastTime = new Date().getTime(),
+      maxLifeTime = 2000,
+      emitterX = 100
+      emitterY = 100,
+      smokeImage = new Image();
+  
+  function spawn() {
+    if (new Date().getTime() > lastTime + minSpawnTime) {
+      lastTime = new Date().getTime();
+      parts.push(new smoke(emitterX, emitterY));
+    }
+  }
+  
+  function render() {
+    if(loading){
+      load();
+      return false;
+    }
+    
+    var len = parts.length;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
+    while (len--) {
+      if (parts[len].y < 0 || parts[len].lifeTime > maxLifeTime) {
+        parts.splice(len, 1);
+      } else {
+        parts[len].update();
+        
+        ctx.save();
+        var offsetX = -parts[len].size / 2,
+            offsetY = -parts[len].size / 2;
+        
+        ctx.translate(parts[len].x - offsetX, parts[len].y - offsetY);
+        ctx.rotate(parts[len].angle / 180 * Math.PI);
+        ctx.globalAlpha = parts[len].alpha;
+        ctx.drawImage(parts[len].image, offsetX, offsetY, parts[len].size, parts[len].size);
+        ctx.restore();
+      }
+    }
+    spawn();
+    requestAnimationFrame(render);
+  }
+  
+  function smoke(x, y, index) {
+    this.image = smokeImage;
+    this.angle = Math.random() * 359;
+    this.startAlpha = .4;
+
+    this.x = x;
+    this.y = y;
+    
+    this.size = 150;
+    this.startSize = 180 + Math.random()*0
+    this.endSize = 200 + Math.random()*0;
+    
+    this.startLife = new Date().getTime();
+    this.lifeTime = 0;
+    
+    this.velY = -0;
+    this.velX = -0+ (Math.random()*0);
+  }
+  
+  smoke.prototype.update = function () {
+    this.lifeTime = new Date().getTime() - this.startLife;
+    this.angle += 0;
+    
+    var lifePerc = ((this.lifeTime / maxLifeTime) * 100);
+    
+    this.size = this.startSize + ((this.endSize - this.startSize) * lifePerc * 0.1);
+    
+    this.alpha = this.startAlpha - (lifePerc * .01);
+    this.alpha = Math.max(this.alpha, 0);
+    
+    this.x += this.velX;
+    this.y += this.velY;
+  }
+  
+
+  smokeImage.src = "images/smoke.png";
+  smokeImage.onload = function(){
+    loading = false;  
+  }
+  
+  function load(){
+    if(loading){
+      setTimeout(load, 100); 
+    }else{
+      render(); 
+    }
+  }
+  
+  canvas.width = 940;
+  canvas.height = 600;
+
+  setTimeout(function(){
+
+    render();
+  },100);
+  
+},300)
+    </script>
+</body>
+
+</html>
